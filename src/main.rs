@@ -30,6 +30,8 @@ fn main() {
         // println!("{:?}", pages_obj.pages);
         // this gets the Page struct then pages vec, then index 0 of pages vec, then the title of the struct in index 0
         let mut template_str: String = "".to_string();//FIX: Need to init this with something different
+        let mut page_paths = Vec::new();
+
         // find template HTML file
         for each in 0..pages_obj.pages.len() {
             let page_details = &pages_obj.pages[each];
@@ -43,26 +45,44 @@ fn main() {
                 // load template HTML file to string
                 template_str = fs::read_to_string(template_path)
                     .expect("Error loading file.");
-                
-                //template_page = each;
-                
-            } else {
+                break
             }
         };
-        println!("{:?}", template_str);
-        /* THIS NEEDS TO BE ANOTHER FOR LOOP
-        let page_details = &pages_obj.pages[each];
-        let page_path = &page_details.path;
+        //println!("{:?}", template_str);
 
-        // create HTML file
-        match fs::write(page_path, template_str) {
-            // FIX: make the file create in specified project folder/where SOSWG is run
-            // FIX: determine HTML file name from JSON
-            Ok(o) => o.to_string(),
-            Err(e) => e.to_string()
+        for each in 0..pages_obj.pages.len() {
+            let page_details = &pages_obj.pages[each];
+            let page_path = &page_details.path;
+            let template = page_details.template;
+
+            if template == false {
+                page_paths.push(page_path.to_string());
+            }
         }
-        */
+
+        println!("{:?}", page_paths);
+
+        for each in 0..page_paths.len() {
+            let page_details = &pages_obj.pages[each];
+            let page_path = &page_details.path;
+            let link = page_details.link;
+
+            if link == false {
+                // create HTML file
+                match fs::write(page_path, &template_str) {
+                    // FIX: make the file create in specified project folder/where SOSWG is run
+                    // FIX: determine HTML file name from JSON
+                    Ok(o) => o,
+                    Err(_e) => ()
+                }
+            }
+        }
+
 
     // NEXT: parse template file (string) for variable
     // then insert the contents HTML into newly created HTML files for each page
+
+    // THEN: need to parse template file (string) for menu variable
+    // then loop through the map.json file and create a menu link for any pages with
+    // an index of > 0
 }
