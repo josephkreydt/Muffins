@@ -1,22 +1,31 @@
+/*************
+ * libraries *
+ *************/
 use std::fs; // for reading and writing files
-use serde_json::{Result, Value}; // for reading JSON files
-use serde::{Deserialize, Serialize};
+use serde_json::{Result, Value}; // for handling JSON files
+use serde::{Deserialize, Serialize}; // for handling JSON files
 
-    // create structures of types to hold JSON data
-    #[derive(Serialize, Deserialize, Debug)]
-    struct Page {
-        pages: Vec<PageDetails>,
-    }
+/************************************
+ * create structs to hold JSON data *
+ ************************************/
+#[derive(Serialize, Deserialize, Debug)]
+struct Page {
+    pages: Vec<PageDetails>,
+}
 
-    #[derive(Serialize, Deserialize, Debug)]
-    struct PageDetails {
-        title: String,
-        link: bool,
-        path: String,
-        template: bool,
-        index: i32,
-    }
+#[derive(Serialize, Deserialize, Debug)]
+struct PageDetails {
+    title: String,
+    link: bool,
+    path: String,
+    content: String,
+    template: bool,
+    index: i32,
+}
 
+/********************
+ * the main program *
+ ********************/
 fn main() {
 
     // load JSON file to string
@@ -81,6 +90,14 @@ fn main() {
 
     // NEXT: parse template file (string) for variable
     // then insert the contents HTML into newly created HTML files for each page
+    let template_parts: Vec<&str> = template_str.split("{INSERT_HTML}").collect();
+
+    for each in 0..pages_obj.pages.len() {
+        let page_details = &pages_obj.pages[each];
+        
+    }
+        // read in the specified content file to string
+        // between each index in the vector, insert the specified HTML
 
     // THEN: need to parse template file (string) for menu variable
     // then loop through the map.json file and create a menu link for any pages with
