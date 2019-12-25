@@ -69,7 +69,7 @@ fn main() {
             }
         }
 
-        println!("{:?}", page_paths);
+        //println!("{:?}", page_paths);
 
         for each in 0..page_paths.len() {
             let page_details = &pages_obj.pages[each];
@@ -90,14 +90,28 @@ fn main() {
 
     // NEXT: parse template file (string) for variable
     // then insert the contents HTML into newly created HTML files for each page
-    let template_parts: Vec<&str> = template_str.split("{INSERT_HTML}").collect();
+    //let template_parts: Vec<&str> = template_str.split("{INSERT_HTML}").collect();
 
     for each in 0..pages_obj.pages.len() {
         let page_details = &pages_obj.pages[each];
-        
+        let page_path = &page_details.path;
+        let content_path = &page_details.content;
+
+        if content_path != "" {
+            println!("{:?}", content_path);
+
+            let content_str = fs::read_to_string(&content_path)
+            .expect("Error loading file.");
+
+            let page_str = template_str.replace("{INSERT_HTML}", &content_str);
+
+            match fs::write(page_path, page_str) {
+                Ok(o) => o,
+                Err(_e) => ()
+            }
+        }
+        // append template part or content to file
     }
-        // read in the specified content file to string
-        // between each index in the vector, insert the specified HTML
 
     // THEN: need to parse template file (string) for menu variable
     // then loop through the map.json file and create a menu link for any pages with
