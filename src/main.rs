@@ -48,7 +48,7 @@ fn main() {
             if template == true {
                 
                 // FIX: move variable declarations out of code, to beginning of for loop
-                let template_path = &pages_obj.pages[each].path;
+                let template_path = &pages_obj.pages[each].content;
                 //println!("{:?}", template_path);
 
                 // load template HTML file to string
@@ -96,13 +96,14 @@ fn main() {
         let page_details = &pages_obj.pages[each];
         let page_path = &page_details.path;
         let content_path = &page_details.content;
+        let template = page_details.template;
 
-        if content_path != "" {
+        if content_path != "" && template != true {
             println!("{:?}", content_path);
-
             let content_str = fs::read_to_string(&content_path)
-            .expect("Error loading file.");
-
+                .expect("Error loading file.");
+            println!("{:?}", content_str);
+            println!("{:?}", page_path);
             let page_str = template_str.replace("{INSERT_HTML}", &content_str);
 
             match fs::write(page_path, page_str) {
@@ -110,10 +111,22 @@ fn main() {
                 Err(_e) => ()
             }
         }
-        // append template part or content to file
     }
 
+    let mut menu_items = Vec::new();
     // THEN: need to parse template file (string) for menu variable
     // then loop through the map.json file and create a menu link for any pages with
     // an index of > 0
+    for each in 0..pages_obj.pages.len() {
+        let page_details = &pages_obj.pages[each];
+        let page_title = &page_details.title;
+        let page_path = &page_details.path;
+        let menu_index = &page_details.index;
+
+        if menu_index > &0 {
+            //add to vector at index location of menu_index
+            menu_items.splice(menu_index..&1, page_title.as_str().//???);
+        }
+    }
+    println!("{:?}", menu_items);
 }
