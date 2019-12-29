@@ -113,13 +113,15 @@ fn main() {
         let template = page_details.template;
 
         if content_path != "" && template != true {
-            println!("{:?}", content_path);
+            //println!("{:?}", content_path);
             let content_str = fs::read_to_string(&content_path)
                 .expect("Error loading file.");
-            println!("{:?}", content_str);
-            println!("{:?}", page_path);
+            //println!("{:?}", content_str);
+            //println!("{:?}", page_path);
             let page_str = template_str.replace("{INSERT_HTML}", &content_str);
 
+            // make this part happen later on if possible, so that i can
+            // add menu_link_str to page_str too before doing the writes
             match fs::write(page_path, page_str) {
                 Ok(o) => o,
                 Err(_e) => ()
