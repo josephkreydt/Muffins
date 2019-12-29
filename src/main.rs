@@ -148,7 +148,7 @@ fn main() {
             menu_items_count = menu_items_count + 1;
         }
     }
-    println!("Menu items count: {:?}", menu_items_count);
+    //println!("Menu items count: {:?}", menu_items_count);
     let mut menu_link_str: String = "".to_string();//FIX: Need to init this with something different
     //println!("menu link string starts with: {:?}", menu_link_str);
     let mut i: i32 = 1; //starts w/1 instead of 0 because menu_index 0 marks do not add to menu
