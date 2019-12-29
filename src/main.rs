@@ -128,7 +128,7 @@ fn main() {
     }
 
     /********************
-    * function: create HTML pages that contain the template and the content *
+    * function: generate menu items HTML *
     ********************/
     // THEN: need to parse template file (string) for menu variable
     // then loop through the map.json file and create a menu link for any pages with
