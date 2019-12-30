@@ -32,7 +32,7 @@ fn main() {
     * function: load map.json *
     ********************/
     // load JSON file to string
-    let json_str = fs::read_to_string("C:\\Users\\joekr\\Programs\\soswg_site\\map.json")
+    let json_str = fs::read_to_string("C:\\Users\\joekr\\Programs\\joekreydt\\map.json")
         .expect("Error loading file.");
 
     // load JSON string to Pages struct
@@ -40,7 +40,7 @@ fn main() {
         .expect("Error structuring JSON to Page.");
 
     /********************
-    * function: load template HTML file *
+    * function: load template file *
     ********************/
     // this gets the Page struct then pages vec, then index 0 of pages vec, then the title of the struct in index 0
     let mut template_str: String = "".to_string();
@@ -53,7 +53,6 @@ fn main() {
             
             // FIX: move variable declarations out of code, to beginning of for loop
             let template_path = &pages_obj.pages[each].content;
-            //println!("{:?}", template_path);
 
             // load template HTML file to string
             template_str = fs::read_to_string(template_path)
@@ -110,7 +109,6 @@ fn main() {
 
     for each in 0..pages_obj.pages.len() {
         let page_details = &pages_obj.pages[each];
-        //let page_path = &page_details.path;
         let content_path = &page_details.content;
         let template = page_details.template;
 
@@ -121,14 +119,6 @@ fn main() {
             let page_str = template_str.replace("{INSERT_HTML}", &content_str);
 
             pages_vec.push(page_str.to_string());
-            // make this part happen later on if possible, so that i can
-            // add menu_link_str to page_str too before doing the writes
-            /*
-            match fs::write(page_path, page_str) {
-                Ok(o) => o,
-                Err(_e) => ()
-            }
-            */
         } else {
             let page_str = "";
             pages_vec.push(page_str.to_string());
@@ -140,10 +130,13 @@ fn main() {
     ********************/
     let mut final_pages_vec = Vec::new();
     for each in 0..pages_vec.len() {
-        let final_page_str = pages_vec[each].replace("{MENU_TEST}", &menu_link_str);
+        let final_page_str = pages_vec[each].replace("{MENU}", &menu_link_str);
         final_pages_vec.push(final_page_str);
     }
 
+    /********************
+    * function: write new pages to file *
+    ********************/
     for each in 0..pages_obj.pages.len() {
         let page_details = &pages_obj.pages[each];
         let content_path = &page_details.content;
