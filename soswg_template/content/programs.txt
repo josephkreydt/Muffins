@@ -1,0 +1,3 @@
+<a href="https://github.com/joekreydt/soswg" target="_blank">SOSWG - Simple, Open, Static Website Generator</a><br><br>
+<a href="https://github.com/joekreydt/Captis" target="_blank">Captis - ChromeOS app for screen recording</a><br><br>
+<a href="https://github.com/joekreydt/GPACalculator" target="_blank">GPA calculator that offers the ability to factor in anticipated course grades and repeat courses</a>

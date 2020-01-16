@@ -1,0 +1,76 @@
+body {
+  background-color: rgb(249, 245, 224);
+  color: rgb(122, 58, 14);
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.picture {
+  width: 26rem;
+  border: 10px solid rgb(229, 112, 91);
+  display: block;
+  margin-left: 30%;
+  margin-right: auto;
+}
+
+#topLeftMenu {
+  width: 10rem;
+  position: fixed;
+  margin-top: 4.4rem;
+}
+
+.menu-link {
+	background-color: rgb(63, 106, 175);
+	color: rgb(249, 245, 224);
+	font-size: 1.7rem;
+  font-family: 'Georgia', serif;
+  border: none;
+  text-decoration: none;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 2px;
+  float: right;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+#topLeftHeading a {
+	background-color: rgb(249, 245, 224);
+	font-size: 1.5rem;
+  font: bold 1.38em 'Georgia', 'Palatino Linotype' , serif;
+  border: none;
+  text-decoration: none;
+  padding-left: 6px;
+  padding-right: 6px;
+  position: fixed;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: rgb(122, 58, 14);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#topLeftHeading a:visited {
+  text-decoration: none;
+  color: rgb(122, 58, 14);
+}
+
+#mainArea {
+  color: black;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  margin-top: 4.6rem;
+  margin-left: 14rem;
+  float: none;
+  position: absolute;
+}

@@ -32,7 +32,7 @@ fn main() {
     * function: load map.json *
     ********************/
     // load JSON file to string
-    let json_str = fs::read_to_string("C:\\Users\\joekr\\Programs\\joekreydt\\map.json")
+    let json_str = fs::read_to_string("C:\\Users\\joekr\\Programs\\joekreydt.github.io\\map.json")
         .expect("Error loading file.");
 
     // load JSON string to Pages struct
@@ -60,6 +60,7 @@ fn main() {
             break
         }
     };
+    println!("{:?}", template_str);
 
     /********************
     * function: generate menu items HTML *
@@ -142,10 +143,11 @@ fn main() {
         let content_path = &page_details.content;
         let template = page_details.template;
         let page_path = &page_details.path;
+        let write_path = format!("./site/{}", page_path);
         let page_content = &final_pages_vec[each];
 
         if content_path != "" && template != true {
-            match fs::write(page_path, page_content) {
+            match fs::write(write_path, page_content) {
                 Ok(o) => o,
                 Err(_e) => ()
             }

@@ -1,0 +1,4 @@
+<a href="https://youtube.com/joekreydt" target="_blank">Tech Videos</a>
+<a href="https://www.youtube.com/channel/UCflscoG_6uaC4shE5tQt06Q" target="_blank">Life Improvement Videos</a>
+<a href="https://www.youtube.com/user/ForeverSwell" target="_blank">Song Videos</a>
+<a href="https://www.youtube.com/vibedynamite" target="_blank">Gaming Videos</a>
