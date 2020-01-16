@@ -32,7 +32,7 @@ fn main() {
     * function: load map.json *
     ********************/
     // load JSON file to string
-    let json_str = fs::read_to_string("C:\\Users\\joekr\\Programs\\joekreydt.github.io\\map.json")
+    let json_str = fs::read_to_string("./map.json")
         .expect("Error loading file.");
 
     // load JSON string to Pages struct
