@@ -2,11 +2,10 @@
  * libraries *
  *************/
 use std::fs; // for reading and writing files
-//use serde_json::{Result, Value}; // for handling JSON files
 use serde::{Deserialize, Serialize}; // for handling JSON files
 
 /************************************
- * create structs to hold JSON data *
+ * create structs to hold map data *
  ************************************/
 #[derive(Serialize, Deserialize, Debug)]
 struct Page {
