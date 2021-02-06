@@ -4,7 +4,7 @@
         "title" : "Programs",
         "link" : false,
         "path" : "./programs.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\programs.txt",
+        "content" : "./content/programs.txt",
         "template" : false,
         "index" : 2
         },
@@ -12,7 +12,7 @@
         "title" : "Template",
         "link" : false,
         "path" : "",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\template.html",
+        "content" : "./template.html",
         "template" : true,
         "index" : 0
         },
@@ -28,7 +28,7 @@
         "title" : "Songs",
         "link" : false,
         "path" : "./songs.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\songs.txt",
+        "content" : "./content/songs.txt",
         "template" : false,
         "index" : 6
         },
@@ -36,7 +36,7 @@
         "title" : "Home",
         "link" : false,
         "path" : "./index.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\home.txt",
+        "content" : "./content/home.txt",
         "template" : false,
         "index" : 1
         },
@@ -44,7 +44,7 @@
         "title" : "Thoughts",
         "link" : false,
         "path" : "./thoughts.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\thoughts.txt",
+        "content" : "./content/thoughts.txt",
         "template" : false,
         "index" : 5
         },
@@ -52,7 +52,7 @@
         "title" : "About",
         "link" : false,
         "path" : "./about.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\about.txt",
+        "content" : "./content/about.txt",
         "template" : false,
         "index" : 9
         },
@@ -60,7 +60,7 @@
         "title" : "Drawings",
         "link" : false,
         "path" : "./drawings.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\drawings.txt",
+        "content" : "./content/drawings.txt",
         "template" : false,
         "index" : 7
         },
@@ -68,7 +68,7 @@
         "title" : "Poems",
         "link" : false,
         "path" : "./poems.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\poems.txt",
+        "content" : "./content/poems.txt",
         "template" : false,
         "index" : 3
         },
@@ -76,7 +76,7 @@
         "title" : "Recipes",
         "link" : false,
         "path" : "./recipes.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\recipes.txt",
+        "content" : "./content/recipes.txt",
         "template" : false,
         "index" : 8
         },
@@ -84,7 +84,7 @@
         "title" : "Videos",
         "link" : false,
         "path" : "./videos.html",
-        "content" : "C:\\Users\\joekr\\Programs\\joekreydt.github.io\\content\\videos.txt",
+        "content" : "./content/videos.txt",
         "template" : false,
         "index" : 4
         }

@@ -32,7 +32,7 @@ fn main() {
     ********************/
     // load JSON file to string
     let json_str = fs::read_to_string("./map.json")
-        .expect("Error loading file.");
+        .expect("Error loading JSON file.");
 
     // load JSON string to Pages struct
     let pages_obj = serde_json::from_str::<Page>(&json_str)
@@ -55,7 +55,7 @@ fn main() {
 
             // load template HTML file to string
             template_str = fs::read_to_string(template_path)
-                .expect("Error loading file.");
+                .expect("Error loading HTML template file.");
             break
         }
     };
@@ -114,7 +114,7 @@ fn main() {
 
         if content_path != "" && template != true {
             let content_str = fs::read_to_string(&content_path)
-                .expect("Error loading file.");
+                .expect("Error loading content file.");
 
             let page_str = template_str.replace("{INSERT_HTML}", &content_str);
 
